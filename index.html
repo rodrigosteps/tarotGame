@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Mogra&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./source/tarotStyle.css " />
+    <link rel="icon" href=" " type="img" />
+    <!--titulo do projeto-->
+    <title>Vortex Tarot</title>
+  </head>
+
+  <body>
+    <!--cabeçalho do projeto-->
+    <header class="cabecalho">
+      <div class="imgLogo"><img src="" alt="logo" srcset="" /></div>
+      <div class="h1"><h1>Vortex Tarot</h1></div>
+    </header>
+    <!--container do projeto-->
+    <main class="container">
+      <!--coleta de informações do usuario-->
+      <h2>Sua Leitura de Tarot:</h2>
+      <section class="infoInput">
+        <input
+          type="text"
+          autofocus
+          placeholder="Faça Uma Pergunta Para o Oraculo ?"
+        />
+        <button class="btn" type="button">Embaralhar e Escolher</button>
+      </section>
+
+      <!--resultado da pergunta do usuario-->
+      <section class="resultado">
+        <article class="deckback" id="deck1">
+          <img src="./assets/backcard.png" alt="imagemCarta" />
+        </article>
+
+        <article class="deck" id="deck">
+          <h3>Deck</h3>
+          <img src="./assets/backcard.png" id="deck3" alt="imagemCarta" />
+          <img src="./assets/backcard.png" id="deck2" alt="imagemCarta" />
+          <img src="./assets/backcard.png"  id="deck1"alt="imagemCarta" />
+        </article>
+
+        <article class="carta">
+          <h3>Passado</h3>
+          <img src="./assets/backcard.png" alt="imagemCarta" />
+        </article>
+
+        <article class="carta">
+          <h3>Presente</h3>
+          <img src="./assets/backcard.png" alt="imagemCarta" />
+        </article>
+
+        <article class="carta">
+          <h3>Futuro</h3>
+          <img src="./assets/backcard.png" alt="imagemCarta" />
+        </article>
+      </section>
+
+      <!--rodape do projeto-->
+      <footer class="rodape"></footer>
+    </main>
+  </body>
+
+  <!--/////////////// Javacript ///////////////-->
+  <script src="./source/tarotJs.js"></script>
+</html>
