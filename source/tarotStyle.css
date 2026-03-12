@@ -10,19 +10,22 @@
   --fontsize: 70px;
   --borderRadius: 6px;
   --margin: 1em auto;
+  --fontcolor: #fff4db;
+  --panelcolor: #f0d5ad;
 }
 /*background*/
 body {
   height: 100dvh;
   background-color: rgba(103, 9, 82, 0.215);
   background-repeat: no-repeat;
-  background-size: 1800px;
   background-position: top;
+  background-size: 100% 100%;
+  background-image: url(/tarotGame/assets/download.png);
 }
 /*estilos do cabeçalho*/
 .cabecalho {
   width: 100%;
-  height: 8em;
+  height: 5em;
   display: flex;
   flex-direction: row;
   background-color: #6155f5;
@@ -40,19 +43,25 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  font-size: 2.5em;
+  font-size: 1.8em;
   font-family: "mogra";
+  color: var(--fontcolor);
 }
 
 /*estilos do texto inicial*/
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: 80em;
+}
 
 h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0.5em auto 0 auto;
-  color: #fff4db;
+  margin: 0.1em auto 0 auto;
+  color: var(--fontcolor);
   font-size: 78px;
   font-family: "cookie";
 }
@@ -100,152 +109,93 @@ h2 {
   display: flex;
   justify-content: right;
   margin: 4em auto;
-  gap: 80px;
+  gap: 10px;
 }
 
-.carta img,
-.deck img {
-  margin-top: 1em;
-  width: 10em;
+.carta {
+  width: 15em;
+  height: 18em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--borderRadius);
+  background-color: var(--panelcolor);
+
+  h3 {
+    font-size: 2.5rem;
+    color: var(--fontcolor);
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    background-color: var(--panelcolor);
+    border-radius: var(--borderRadius);
+    width: 12.5em;
+    padding: 0 0.5em;
+    margin: 3em 0.5em 0 0.5em;
+    font-size: 1.2em;
+    color: var(--fontcolor);
+    word-break: break-all;
+    text-align: center;
+  }
+}
+
+.carta img {
+  width: 11em;
+  object-fit: contain;
   border-radius: var(--borderRadius);
 }
 
 .deck {
-    margin: 0em 14em 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#deck1 img {
-  transition: 2s ease-in-out;
-  -webkit-animation: flip1 1s cubic-bezier(0.950, 0.050, 0.795, 0.035) forwards;
-	        animation: flip1 1s cubic-bezier(0.950, 0.050, 0.795, 0.035) forwards;
-}
-#deck2 img {
-  transition: 2s ease-in-out;
-  -webkit-animation: flip2 1s 3s cubic-bezier(0.950, 0.050, 0.795, 0.035) forwards;
-	        animation: flip2 1s cubic-bezier(0.950, 0.050, 0.795, 0.035) forwards;
-}
-#deck3 img {
-  transition: 2s ease-in-out;
-  animation: float 1s
-    linear(
-      0,
-      0.0001,
-      0.0005,
-      0.0011,
-      0.002,
-      0.0031,
-      0.0044,
-      0.006,
-      0.0079,
-      0.01,
-      0.0123,
-      0.0149,
-      0.0177,
-      0.0208,
-      0.0241,
-      0.0276,
-      0.0314,
-      0.0354,
-      0.0397,
-      0.0442,
-      0.0489,
-      0.0539,
-      0.0591,
-      0.0646,
-      0.0702,
-      0.0761,
-      0.0822,
-      0.0886,
-      0.0952,
-      0.102,
-      0.109,
-      0.1162,
-      0.1237,
-      0.1314,
-      0.1393,
-      0.1474,
-      0.1557,
-      0.1642,
-      0.1729,
-      0.1819,
-      0.191,
-      0.2003,
-      0.2098,
-      0.2196,
-      0.2295,
-      0.2396,
-      0.2499,
-      0.2604,
-      0.271,
-      0.2819,
-      0.2929,
-      0.3041,
-      0.3155,
-      0.327,
-      0.3387,
-      0.3506,
-      0.3626,
-      0.3748,
-      0.3871,
-      0.3996,
-      0.4122,
-      0.425,
-      0.4379,
-      0.451,
-      0.4642,
-      0.4775,
-      0.491,
-      0.5045,
-      0.5182,
-      0.5321,
-      0.546,
-      0.5601,
-      0.5742,
-      0.5885,
-      0.6029,
-      0.6173,
-      0.6319,
-      0.6465,
-      0.6613,
-      0.6761,
-      0.691,
-      0.706,
-      0.721,
-      0.7361,
-      0.7513,
-      0.7666,
-      0.7819,
-      0.7972,
-      0.8126,
-      0.8281,
-      0.8436,
-      0.8591,
-      0.8747,
-      0.8903,
-      0.9059,
-      0.9215,
-      0.9372,
-      0.9529,
-      0.9686,
-      0.9843,
-      1
-    )
-    forwards;
+.deck1,
+.deck2,
+.deck3 {
+  position: absolute;
+  left: 2em;
 }
 
-.deckback img{
-    margin-top: 2.6em;
-  width: 10em;
+.deckback img,
+.deck img {
+  margin-top: 2.6em;
+  width: 8em;
   border-radius: var(--borderRadius);
 }
 
-.deckback{
+.deckback {
   position: absolute;
-  z-index: -1; 
-    margin-right: 59em;
+  bottom: 0.6em;
+  z-index: -1;
+  left: 2em;
 }
 
+.deck1,
+.deck2,
+.deck3{
+  display: none;
+}
 /*Animação do deck de cartas*/
+.deck1Active {
+  transition: 4s ease-in-out;
+  -webkit-animation: flip1 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+  animation: flip1  1s 0.16s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+}
+.deck2Active {
+  transition: 4s ease-in-out;
+  -webkit-animation: flip2 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+  animation: flip2 1s 0.36s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+}
+.deck3Active {
+  transition: 4s ease-in-out;
+  -webkit-animation: flip3 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+  animation: flip3 1s 0.56s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+}
+
 @keyframes flip1 {
   0% {
     -webkit-transform: translateX(0) rotateY(0deg);
@@ -253,43 +203,92 @@ h2 {
   }
 
   55% {
-    -webkit-transform: translateX(460px) rotateY(30deg);
-    transform: translateX(460px) rotateY(30deg);
+    -webkit-transform: translateX(28.75) rotateY(30deg);
+    transform: translateX(28.75em) rotateY(30deg);
   }
   80% {
-    -webkit-transform: translateX(461px) rotateY(60deg);
-    transform: translateX(461px) rotateY(60deg);
+    -webkit-transform: translateX(28.813) rotateY(60deg);
+    transform: translateX(28.813em) rotateY(60deg);
   }
 
   85% {
-    -webkit-transform: translateX(464px) rotateY(90deg);
-    transform: translateX(464px) rotateY(90deg);
+    -webkit-transform: translateX(29) rotateY(90deg);
+    transform: translateX(27em) rotateY(90deg);
   }
   90% {
-    -webkit-transform: translateX(464px) rotateY(120deg);
-    transform: translateX(464px) rotateY(120deg);
+    -webkit-transform: translateX(29) rotateY(120deg);
+    transform: translateX(27em) rotateY(120deg);
   }
   95% {
-    -webkit-transform: translateX(464px) rotateY(150deg);
-    transform: translateX(464px) rotateY(150deg);
+    -webkit-transform: translateX(29) rotateY(150deg);
+    transform: translateX(27em) rotateY(150deg);
   }
   100% {
-    -webkit-transform: translateX(464px) rotateY(180deg);
-    transform: translateX(464px) rotateY(180deg);
+    -webkit-transform: translateX(29) rotateY(180deg);
+    transform: translateX(27em) rotateY(180deg);
   }
 }
-
 @keyframes flip2 {
   0% {
     -webkit-transform: translateX(0) rotateY(0deg);
     transform: translateX(0) rotateY(0deg);
   }
 
+  55% {
+    -webkit-transform: translateX(694px) rotateY(30deg);
+    transform: translateX(694px) rotateY(30deg);
+  }
+  80% {
+    -webkit-transform: translateX(690px) rotateY(60deg);
+    transform: translateX(690px) rotateY(60deg);
+  }
 
+  85% {
+    -webkit-transform: translateX(690px) rotateY(90deg);
+    transform: translateX(690px) rotateY(90deg);
+  }
+  90% {
+    -webkit-transform: translateX(690px) rotateY(120deg);
+    transform: translateX(690px) rotateY(120deg);
+  }
+  95% {
+    -webkit-transform: translateX(700px) rotateY(150deg);
+    transform: translateX(690px) rotateY(150deg);
+  }
   100% {
-    -webkit-transform: translateX(864px) rotateY(180deg);
-    transform: translateX(864px) rotateY(180deg);
+    -webkit-transform: translateX(690px) rotateY(180deg);
+    transform: translateX(690px) rotateY(180deg);
   }
 }
+@keyframes flip3 {
+  0% {
+    -webkit-transform: translateX(0) rotateY(0deg);
+    transform: translateX(0) rotateY(0deg);
+  }
 
+  55% {
+    -webkit-transform: translateX(945px) rotateY(30deg);
+    transform: translateX(945px) rotateY(30deg);
+  }
+  80% {
+    -webkit-transform: translateX(945px) rotateY(60deg);
+    transform: translateX(945px) rotateY(60deg);
+  }
 
+  85% {
+    -webkit-transform: translateX(945px) rotateY(90deg);
+    transform: translateX(945px) rotateY(90deg);
+  }
+  90% {
+    -webkit-transform: translateX(945px) rotateY(120deg);
+    transform: translateX(945px) rotateY(120deg);
+  }
+  95% {
+    -webkit-transform: translateX(945px) rotateY(150deg);
+    transform: translateX(945px) rotateY(150deg);
+  }
+  100% {
+    -webkit-transform: translateX(945px) rotateY(180deg);
+    transform: translateX(945px) rotateY(180deg);
+  }
+}
