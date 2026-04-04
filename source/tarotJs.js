@@ -101,8 +101,6 @@ const baralho = [
             " A Torre, Ruptura brusca. Estruturas instáveis vão cair. Não tente segurar os escombros; deixe o que for velho ir embora para reconstruir do zero. ",
     },
 
-    { carta: "/tarotGame/assets/sacerdotisa.png", texto: "  " },
-
     {
         carta: "/tarotGame/assets/sacerdotisa.png",
         texto:
@@ -177,7 +175,7 @@ function pickUp() {
         //habilitando o botão novamente
         setTimeout(() => {
             btn.disabled = false;
-            btn.innerText = "Embaralhar Novamente";
+            btn.innerText = "Nova Leitura";
             btn.style.opacity = 1;
         }, 1000);
     } 

@@ -5,6 +5,7 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+
 /*variaveis*/
 :root {
   --fontsize: 70px;
@@ -13,14 +14,49 @@
   --fontcolor: #fff4db;
   --panelcolor: #f0d5ad;
 }
-/*background*/
+/*estilos do Background*/
+
 body {
-  height: 100dvh;
-  background-color: rgba(103, 9, 82, 0.215);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: 100% 100%;
-  background-image: url(/tarotGame/assets/download.png);
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#cf85ee 10%, #570b77 60%, #1a001c 90%);
+}
+
+.backgroundCamada {
+  background-image: url(/tarotGame/assets/bka.svg);
+  background-size: contain;
+  opacity: 0.3;
+  filter: blur(10px);
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  animation: rodar 200s linear infinite;
+}
+
+.backgroundCamada1 {
+  background-image: url(/tarotGame/assets/bkgStar.svg);
+  background-size: contain;
+  opacity: 0.7;
+  filter: blur(10px);
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  animation: rodar 400s linear infinite;
+}
+
+@keyframes rodar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 /*estilos do cabeçalho*/
 .cabecalho {
@@ -54,7 +90,7 @@ body {
   position: relative;
   width: 80em;
 }
-
+/*Frase principal*/
 h2 {
   display: flex;
   flex-direction: column;
@@ -64,27 +100,35 @@ h2 {
   color: var(--fontcolor);
   font-size: 78px;
   font-family: "cookie";
+  position: relative;
+  z-index: 1;
 }
-
+/*campo da pergunta*/
 .infoInput {
-  height: 4em;
-  width: 34em;
+  height: 6em;
+  width: 44em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 2em auto;
-  background-color: #f7e5cc;
-  border-radius: var(--borderRadius);
-  border: solid 2px #997d55;
-  box-shadow: 0 0 40px 10px #f0d5ad;
+  margin: 0 auto;
+background: rgba(241, 203, 100, 0.363);
+border-radius: 16px;
+box-shadow: 0 40px 90px rgba(193, 38, 188, );
+backdrop-filter: blur(5.9px);
+border-radius: var(--borderRadius);
+}
+
+.infoInput:hover {
+  border: solid 1px #e6c665bd;
+  box-shadow: 0 0 40px 20px #e6c665bd;
 }
 
 .infoInput input {
-  width: 38em;
+  width: 44em;
   height: 3.5em;
   border-radius: var(--borderRadius);
-  border: solid 2px #decaae;
+  border: none;
   padding-left: 1em;
 }
 
@@ -92,7 +136,7 @@ h2 {
   font-size: 18px;
   font-weight: 600;
 }
-
+/*Botão da pergunta*/
 .infoInput button {
   background-color: #362c4e;
   color: #e4e1f4;
@@ -115,16 +159,18 @@ h2 {
 
 .carta {
   width: 15em;
-  height: 24em;
+  height: 20em;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: var(--borderRadius);
   background-color: var(--panelcolor);
-
+  border: 1px solid #f0c02f ;
+  
   h3 {
     font-size: 2.5rem;
-    color: var(--fontcolor);
+    color: #f0c02f;
+    -webkit-text-stroke: 1px #bc9a00;
     margin-bottom: 0.5em;
   }
 
@@ -133,20 +179,23 @@ h2 {
     border-radius: var(--borderRadius);
     width: 12.5em;
     padding: 0 0.5em;
-    margin: 2em 0.5em 0 0.5em;
+    margin: 1.7em 0.5em;
     font-size: 1.2em;
     color: var(--fontcolor);
-    word-break: break-all;
+    word-break: break-word;
     text-align: center;
+    position: absolute;
+    top: 28em;
   }
 }
 
 .carta img {
   width: 10em;
+  height: 15em;
   object-fit: contain;
   border-radius: var(--borderRadius);
 }
-
+/* cartas embaralhadas*/
 .deck {
   display: flex;
   flex-direction: column;
@@ -154,18 +203,22 @@ h2 {
   align-items: center;
 }
 
-.deck1, .deck2, .deck3 {
+.deck1,
+.deck2,
+.deck3 {
   position: absolute;
   left: 2em;
 }
 
 .deckback img,
 .deck img {
-  margin-top: 2.6em;
-  width: 8em;
+  margin-top: 3em;
+  width: 10em;
+  height: 15em;
   border-radius: var(--borderRadius);
 }
 
+/*Verso do baralho*/
 .deckback {
   position: absolute;
   bottom: 0.6em;
@@ -177,7 +230,7 @@ h2 {
 .deck1Active {
   transition: 8s ease-in-out;
   -webkit-animation: flip1 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
-  animation: flip1  1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+  animation: flip1 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
   backface-visibility: hidden;
 }
 .deck2Active {
@@ -185,14 +238,12 @@ h2 {
   -webkit-animation: flip2 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
   animation: flip2 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
   backface-visibility: hidden;
-
 }
 .deck3Active {
   transition: 4s ease-in-out;
   -webkit-animation: flip3 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
   animation: flip3 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
   backface-visibility: hidden;
-
 }
 
 @keyframes flip1 {
