@@ -131,6 +131,8 @@ const baralho = [
             " O Mundo, Conclusão de ciclo. Você atingiu seu objetivo. Comemore a vitória e prepare-se, pois você está pronto para um nível superior. ",
     },
 ];
+
+
 //função para lançar a animação
 function pickUp() {
     const usuarioPergunta = document.getElementById("Pergunta").value;
