@@ -1,3 +1,5 @@
+
+//baralho de cartas e seus significados
 const baralho = [
     {
         carta: "/tarotGame/assets/enforcado.png",
@@ -132,8 +134,22 @@ const baralho = [
     },
 ];
 
+//scroll suave para a seção de cartas
+document.getElementById("Pergunta").addEventListener("click", function () {
 
-//função para lançar a animação
+  window.scrollTo({
+    top: 500,
+    behavior: "smooth"
+  });
+  
+});
+
+document.getElementById("Pergunta").addEventListener("focus", function() {
+  document.querySelector(".infoInput").style.transform = "scale(1.2)";
+}) 
+
+//função para sortear as cartas e mostrar os significados
+//consts para pegar os elementos do DOM que serão manipulados
 function pickUp() {
     const usuarioPergunta = document.getElementById("Pergunta").value;
     const Play1 = document.querySelector(".deck1");
@@ -147,26 +163,30 @@ function pickUp() {
         Play1.classList.add("deck1Active");
         Play2.classList.add("deck2Active");
         Play3.classList.add("deck3Active");
+
         //sorteando cartas
         const indice = Math.floor(Math.random() * baralho.length);
         const escolhida = baralho[indice];
+
         //criando copia para embaralhar
         const baralhoEmbaralhado = [...baralho].sort(() => Math.random() - 0.5);
 
         const cartaPassado = baralhoEmbaralhado[0];
         const cartaPresente = baralhoEmbaralhado[1];
         const cartaFuturo = baralhoEmbaralhado[2];
-        //disabilitando o butão durante a animação
+
+        //disabilitando o botão durante a animação
         const btn = document.querySelector("button");
         btn.disabled = true;
         btn.innerText = "Consultando Oráculo...";
         btn.style.opacity = 0.6;
+
         //atraso na animação
         setTimeout(() => {
             document.getElementById("CartaPassado").src = cartaPassado.carta;
             document.getElementById("CartaPresente").src = cartaPresente.carta;
             document.getElementById("CartaFuturo").src = cartaFuturo.carta;
-
+        
             document.getElementById("descriçãoCartaPassado").innerText =
                 escolhida.texto;
             document.getElementById("descriçãoCartaPresente").innerText =
@@ -174,13 +194,14 @@ function pickUp() {
             document.getElementById("descriçãoCartaFuturo").innerText =
                 escolhida.texto;
         }, 870);
+
         //habilitando o botão novamente
         setTimeout(() => {
             btn.disabled = false;
             btn.innerText = "Nova Leitura";
             btn.style.opacity = 1;
         }, 1000);
-    } 
+}
     //Else para validação da pergunta
     else {
         document.getElementById("Pergunta").placeholder = "Faça Sua Pergunta!!";

@@ -13,8 +13,9 @@
   --margin: 1em auto;
   --fontcolor: #fff4db;
   --panelcolor: #f0d5ad;
-  --trasition: all 0.3s ease ;
+  --trasition: all 0.3s ease;
 }
+
 /*estilos do Background*/
 
 body {
@@ -56,25 +57,30 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 /*estilos do cabeçalho*/
 .cabecalho {
   width: 100%;
-  height: 5em;
+  height: 8em;
   display: flex;
   flex-direction: row;
-  background-color: #4c0383;
+  background-color: #4f0c819c;
+  backdrop-filter: blur(10px);
   border-bottom: solid 4px #e1c300;
 }
+
 .imgLogo img {
   border-radius: var(--borderRadius);
   width: auto;
-  height: 4em;
+  height: 6em;
   mix-blend-mode: luminosity;
 }
+
 .imgLogo {
   display: flex;
   align-items: center;
@@ -97,36 +103,143 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0em auto;
-  width: auto;
-  height: 20em;
+  width: 10em;
+  height: 24em;
+    transform: rotate(-15deg);
+
 }
 
 .cartaDemo {
-width: 20em;
+  width: 20em;
   height: 20em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   perspective: 1000px;
-  animation: cartaGirando 4s linear(0, 0.067, 0.1294, 0.1877, 0.2421, 0.2929, 0.3402, 0.3844, 0.4257, 0.4641, 0.5, 0.5335, 0.5647, 0.5939, 0.6211, 0.6464, 0.6701, 0.6922, 0.7128, 0.7321, 0.75, 0.7667, 0.7824, 0.7969, 0.8105, 0.8232, 0.8351, 0.8461, 0.8564, 0.866, 0.875, 0.8834, 0.8912, 0.8985, 0.9053, 0.9116, 0.9175, 0.9231, 0.9282, 0.933, 0.9375, 0.9417, 0.9456, 0.9492, 0.9526, 0.9558, 0.9588, 0.9615, 0.9641, 0.9665, 0.9688, 0.9708, 0.9728, 0.9746, 0.9763, 0.9779, 0.9794, 0.9808, 0.9821, 0.9833, 0.9844, 0.9854, 0.9864, 0.9873, 0.9882, 0.989, 0.9897, 0.9904, 0.991, 0.9916, 0.9922, 0.9927, 0.9932, 0.9937, 0.9941, 0.9945, 0.9948, 0.9952, 0.9955, 0.9958, 0.9961, 0.9964, 0.9966, 0.9968, 0.997, 0.9972, 0.9974, 0.9976, 0.9978, 0.9979, 0.998, 0.9982, 0.9983, 0.9984, 0.9985, 0.9986, 0.9987, 0.9988, 0.9989, 0.999, 1) infinite;
+  animation: cartaGirando 2s
+    linear(
+      0,
+      0.067,
+      0.1294,
+      0.1877,
+      0.2421,
+      0.2929,
+      0.3402,
+      0.3844,
+      0.4257,
+      0.4641,
+      0.5,
+      0.5335,
+      0.5647,
+      0.5939,
+      0.6211,
+      0.6464,
+      0.6701,
+      0.6922,
+      0.7128,
+      0.7321,
+      0.75,
+      0.7667,
+      0.7824,
+      0.7969,
+      0.8105,
+      0.8232,
+      0.8351,
+      0.8461,
+      0.8564,
+      0.866,
+      0.875,
+      0.8834,
+      0.8912,
+      0.8985,
+      0.9053,
+      0.9116,
+      0.9175,
+      0.9231,
+      0.9282,
+      0.933,
+      0.9375,
+      0.9417,
+      0.9456,
+      0.9492,
+      0.9526,
+      0.9558,
+      0.9588,
+      0.9615,
+      0.9641,
+      0.9665,
+      0.9688,
+      0.9708,
+      0.9728,
+      0.9746,
+      0.9763,
+      0.9779,
+      0.9794,
+      0.9808,
+      0.9821,
+      0.9833,
+      0.9844,
+      0.9854,
+      0.9864,
+      0.9873,
+      0.9882,
+      0.989,
+      0.9897,
+      0.9904,
+      0.991,
+      0.9916,
+      0.9922,
+      0.9927,
+      0.9932,
+      0.9937,
+      0.9941,
+      0.9945,
+      0.9948,
+      0.9952,
+      0.9955,
+      0.9958,
+      0.9961,
+      0.9964,
+      0.9966,
+      0.9968,
+      0.997,
+      0.9972,
+      0.9974,
+      0.9976,
+      0.9978,
+      0.9979,
+      0.998,
+      0.9982,
+      0.9983,
+      0.9984,
+      0.9985,
+      0.9986,
+      0.9987,
+      0.9988,
+      0.9989,
+      0.999,
+      1
+    )
+    infinite;
   backface-visibility: hidden;
 }
 
-.cartaDemo img{
+.cartaDemo img {
   border-radius: var(--borderRadius);
   width: 10em;
   height: 15em;
 }
 
-.Frente ,
+.Frente,
 .Verso {
   position: absolute;
   width: 10em;
   height: 15em;
 }
-.Frente{
-    transform: rotateY(180deg);
+
+.Frente {
+  transform: rotateY(180deg);
 }
 
 /* Animação para girar a carta */
@@ -134,9 +247,11 @@ width: 20em;
   0% {
     transform: rotateY(0deg);
   }
-    50% {
-      transform: rotateY(180deg) ;
-    }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
   100% {
     transform: rotateY(360deg);
   }
@@ -155,6 +270,7 @@ h2 {
   position: relative;
   z-index: 1;
 }
+
 /*campo da pergunta*/
 .infoInput {
   height: 6em;
@@ -186,6 +302,7 @@ h2 {
   font-size: 18px;
   font-weight: 600;
 }
+
 /*Botão da pergunta*/
 .infoInput button {
   background-color: #362c4e;
@@ -245,19 +362,21 @@ h2 {
   object-fit: contain;
   border-radius: var(--borderRadius);
 }
+
 /* cartas embaralhadas*/
 .deck {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .deck1,
 .deck2,
 .deck3 {
   position: absolute;
-  left: 2em;
+  left: -5em;
 }
 
 .deckback img,
@@ -273,122 +392,425 @@ h2 {
   position: absolute;
   bottom: 0.6em;
   z-index: -1;
-  left: 2em;
-}
+left: -5.5em;}
 
 /*Animação do deck de cartas*/
 .deck1Active {
   transition: 8s ease-in-out;
-  -webkit-animation: flip1 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
-  animation: flip1 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+  animation: flip1 1s
+    linear(
+      0,
+      0.067,
+      0.1294,
+      0.1877,
+      0.2421,
+      0.2929,
+      0.3402,
+      0.3844,
+      0.4257,
+      0.4641,
+      0.5,
+      0.5335,
+      0.5647,
+      0.5939,
+      0.6211,
+      0.6464,
+      0.6701,
+      0.6922,
+      0.7128,
+      0.7321,
+      0.75,
+      0.7667,
+      0.7824,
+      0.7969,
+      0.8105,
+      0.8232,
+      0.8351,
+      0.8461,
+      0.8564,
+      0.866,
+      0.875,
+      0.8834,
+      0.8912,
+      0.8985,
+      0.9053,
+      0.9116,
+      0.9175,
+      0.9231,
+      0.9282,
+      0.933,
+      0.9375,
+      0.9417,
+      0.9456,
+      0.9492,
+      0.9526,
+      0.9558,
+      0.9588,
+      0.9615,
+      0.9641,
+      0.9665,
+      0.9688,
+      0.9708,
+      0.9728,
+      0.9746,
+      0.9763,
+      0.9779,
+      0.9794,
+      0.9808,
+      0.9821,
+      0.9833,
+      0.9844,
+      0.9854,
+      0.9864,
+      0.9873,
+      0.9882,
+      0.989,
+      0.9897,
+      0.9904,
+      0.991,
+      0.9916,
+      0.9922,
+      0.9927,
+      0.9932,
+      0.9937,
+      0.9941,
+      0.9945,
+      0.9948,
+      0.9952,
+      0.9955,
+      0.9958,
+      0.9961,
+      0.9964,
+      0.9966,
+      0.9968,
+      0.997,
+      0.9972,
+      0.9974,
+      0.9976,
+      0.9978,
+      0.9979,
+      0.998,
+      0.9982,
+      0.9983,
+      0.9984,
+      0.9985,
+      0.9986,
+      0.9987,
+      0.9988,
+      0.9989,
+      0.999,
+      1
+    )
+    forwards;
   backface-visibility: hidden;
 }
+
 .deck2Active {
   transition: 4s ease-in-out;
-  -webkit-animation: flip2 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
-  animation: flip2 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+  animation: flip2 1s
+    linear(
+      0,
+      0.067,
+      0.1294,
+      0.1877,
+      0.2421,
+      0.2929,
+      0.3402,
+      0.3844,
+      0.4257,
+      0.4641,
+      0.5,
+      0.5335,
+      0.5647,
+      0.5939,
+      0.6211,
+      0.6464,
+      0.6701,
+      0.6922,
+      0.7128,
+      0.7321,
+      0.75,
+      0.7667,
+      0.7824,
+      0.7969,
+      0.8105,
+      0.8232,
+      0.8351,
+      0.8461,
+      0.8564,
+      0.866,
+      0.875,
+      0.8834,
+      0.8912,
+      0.8985,
+      0.9053,
+      0.9116,
+      0.9175,
+      0.9231,
+      0.9282,
+      0.933,
+      0.9375,
+      0.9417,
+      0.9456,
+      0.9492,
+      0.9526,
+      0.9558,
+      0.9588,
+      0.9615,
+      0.9641,
+      0.9665,
+      0.9688,
+      0.9708,
+      0.9728,
+      0.9746,
+      0.9763,
+      0.9779,
+      0.9794,
+      0.9808,
+      0.9821,
+      0.9833,
+      0.9844,
+      0.9854,
+      0.9864,
+      0.9873,
+      0.9882,
+      0.989,
+      0.9897,
+      0.9904,
+      0.991,
+      0.9916,
+      0.9922,
+      0.9927,
+      0.9932,
+      0.9937,
+      0.9941,
+      0.9945,
+      0.9948,
+      0.9952,
+      0.9955,
+      0.9958,
+      0.9961,
+      0.9964,
+      0.9966,
+      0.9968,
+      0.997,
+      0.9972,
+      0.9974,
+      0.9976,
+      0.9978,
+      0.9979,
+      0.998,
+      0.9982,
+      0.9983,
+      0.9984,
+      0.9985,
+      0.9986,
+      0.9987,
+      0.9988,
+      0.9989,
+      0.999,
+      1
+    )
+    forwards;
   backface-visibility: hidden;
 }
+
 .deck3Active {
-  transition: 4s ease-in-out;
-  -webkit-animation: flip3 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
-  animation: flip3 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards;
+  transition: 1s ease-in-out;
+  animation: flip3 1s
+    linear(
+      0,
+      0.067,
+      0.1294,
+      0.1877,
+      0.2421,
+      0.2929,
+      0.3402,
+      0.3844,
+      0.4257,
+      0.4641,
+      0.5,
+      0.5335,
+      0.5647,
+      0.5939,
+      0.6211,
+      0.6464,
+      0.6701,
+      0.6922,
+      0.7128,
+      0.7321,
+      0.75,
+      0.7667,
+      0.7824,
+      0.7969,
+      0.8105,
+      0.8232,
+      0.8351,
+      0.8461,
+      0.8564,
+      0.866,
+      0.875,
+      0.8834,
+      0.8912,
+      0.8985,
+      0.9053,
+      0.9116,
+      0.9175,
+      0.9231,
+      0.9282,
+      0.933,
+      0.9375,
+      0.9417,
+      0.9456,
+      0.9492,
+      0.9526,
+      0.9558,
+      0.9588,
+      0.9615,
+      0.9641,
+      0.9665,
+      0.9688,
+      0.9708,
+      0.9728,
+      0.9746,
+      0.9763,
+      0.9779,
+      0.9794,
+      0.9808,
+      0.9821,
+      0.9833,
+      0.9844,
+      0.9854,
+      0.9864,
+      0.9873,
+      0.9882,
+      0.989,
+      0.9897,
+      0.9904,
+      0.991,
+      0.9916,
+      0.9922,
+      0.9927,
+      0.9932,
+      0.9937,
+      0.9941,
+      0.9945,
+      0.9948,
+      0.9952,
+      0.9955,
+      0.9958,
+      0.9961,
+      0.9964,
+      0.9966,
+      0.9968,
+      0.997,
+      0.9972,
+      0.9974,
+      0.9976,
+      0.9978,
+      0.9979,
+      0.998,
+      0.9982,
+      0.9983,
+      0.9984,
+      0.9985,
+      0.9986,
+      0.9987,
+      0.9988,
+      0.9989,
+      0.999,
+      1
+    )
+    forwards;
   backface-visibility: hidden;
 }
 
 @keyframes flip1 {
   0% {
-    -webkit-transform: translateX(0) rotateY(0deg);
     transform: translateX(0) rotateY(0deg);
   }
 
   55% {
-    -webkit-transform: translateX(28.75) rotateY(30deg);
-    transform: translateX(28.75em) rotateY(30deg);
+    transform: translateX(28.75em);
   }
+
   80% {
-    -webkit-transform: translateX(28.813) rotateY(60deg);
     transform: translateX(28.813em) rotateY(60deg);
   }
 
   85% {
-    -webkit-transform: translateX(29) rotateY(90deg);
-    transform: translateX(27em) rotateY(90deg);
+    transform: rotateY(90deg);
   }
+
   90% {
-    -webkit-transform: translateX(29) rotateY(120deg);
-    transform: translateX(27em) rotateY(120deg);
+    transform: rotateY(120deg);
   }
+
   95% {
-    -webkit-transform: translateX(29) rotateY(150deg);
-    transform: translateX(27em) rotateY(150deg);
+    transform: rotateY(150deg);
   }
+
   100% {
-    -webkit-transform: translateX(29) rotateY(180deg);
-    transform: translateX(27em) rotateY(180deg);
+    transform: rotateY(180deg);
   }
 }
+
 @keyframes flip2 {
   0% {
-    -webkit-transform: translateX(0) rotateY(0deg);
     transform: translateX(0) rotateY(0deg);
   }
 
   55% {
-    -webkit-transform: translateX(694px) rotateY(30deg);
     transform: translateX(694px) rotateY(30deg);
   }
+
   80% {
-    -webkit-transform: translateX(690px) rotateY(60deg);
     transform: translateX(690px) rotateY(60deg);
   }
 
   85% {
-    -webkit-transform: translateX(690px) rotateY(90deg);
     transform: translateX(690px) rotateY(90deg);
   }
+
   90% {
-    -webkit-transform: translateX(690px) rotateY(120deg);
     transform: translateX(690px) rotateY(120deg);
   }
+
   95% {
-    -webkit-transform: translateX(700px) rotateY(150deg);
     transform: translateX(690px) rotateY(150deg);
   }
+
   100% {
-    -webkit-transform: translateX(690px) rotateY(180deg);
     transform: translateX(690px) rotateY(180deg);
   }
 }
+
 @keyframes flip3 {
   0% {
-    -webkit-transform: translateX(0) rotateY(0deg);
     transform: translateX(0) rotateY(0deg);
   }
 
   55% {
-    -webkit-transform: translateX(945px) rotateY(30deg);
     transform: translateX(945px) rotateY(30deg);
   }
+
   80% {
-    -webkit-transform: translateX(945px) rotateY(60deg);
     transform: translateX(945px) rotateY(60deg);
   }
 
   85% {
-    -webkit-transform: translateX(945px) rotateY(90deg);
     transform: translateX(945px) rotateY(90deg);
   }
+
   90% {
-    -webkit-transform: translateX(945px) rotateY(120deg);
     transform: translateX(945px) rotateY(120deg);
   }
+
   95% {
-    -webkit-transform: translateX(945px) rotateY(150deg);
     transform: translateX(945px) rotateY(150deg);
   }
+
   100% {
-    -webkit-transform: translateX(945px) rotateY(180deg);
     transform: translateX(945px) rotateY(180deg);
   }
 }
