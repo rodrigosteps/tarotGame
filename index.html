@@ -5,23 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Mogra&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Cookie&family=Mogra&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./source/tarotStyle.css " />
   <link rel="icon" href="./assets/icon/ " type="img" />
   <!--titulo do projeto-->
   <title>Vortex Tarot</title>
 </head>
 
-<body>
+<>
+  <div class="background"></div>
   <!--cabeçalho do projeto-->
   <header class="cabecalho">
-    <div class="imgLogo"><img src="./assets/icon/Captura de tela 2026-04-05 132337.png" alt="logo" srcset="" /></div>
+    <div class="imgLogo">
+      <img src="./assets/icon/Captura de tela 2026-04-05 132337.png" alt="logo" srcset="" />
     </div>
-  </header>
-  <!--container do projeto-->
-  <main class="container">
+</header>
+<!--container do projeto-->
+<main class="container">
 
     <!--seção de fundo para animação-->
     <div class="backgroundCamada"></div>
@@ -40,16 +42,18 @@
     </section>
 
     <!--coleta de informações do usuario-->
-    <h2>Sua Leitura de Tarot:</h2>
+    <h1>Faça Sua Pergunta</h1>
     <section class="infoInput">
-      <input id="Pergunta" type="text" autofocus placeholder="Faça Uma Pergunta Para o Oraculo ?" />
+      <input id="Pergunta" type="text" autofocus placeholder="Digite Sua Pergunta Aqui..." />
       <button class="btn" id="btn" type="button">
         Embaralhar e Escolher
       </button>
     </section>
 
     <!--resultado da pergunta do usuario-->
+        <h2>Sua Leitura de Tarot:</h2>
     <section class="resultado">
+      
       <article class="deckback" id="deck1">
         <img src="./assets/backcard.png" alt="imagemCarta" />
       </article>
@@ -69,25 +73,50 @@
       <article class="carta">
         <h3>Passado</h3>
         <img src="./assets/card-backwards-svgrepo-com.svg" id="CartaPassado" alt="imagemCarta" />
-        <p id="descriçãoCartaPassado">revelação</p>
+        <p id="descriçãoCartaPassado"></p>
       </article>
 
       <article class="carta">
         <h3>Presente</h3>
         <img src="./assets/card-backwards-svgrepo-com.svg" id="CartaPresente" alt="imagemCarta" />
-        <p id="descriçãoCartaPresente">revelação</p>
+        <p id="descriçãoCartaPresente"></p>
       </article>
 
       <article class="carta">
         <h3>Futuro</h3>
         <img src="./assets/card-backwards-svgrepo-com.svg" id="CartaFuturo" alt="imagemCarta" />
-        <p id="descriçãoCartaFuturo">revelação</p>
+        <p id="descriçãoCartaFuturo"></p>
       </article>
     </section>
 
-    <!--rodape do projeto-->
-    <footer class="rodape"></footer>
   </main>
+  
+  <!--rodape do projeto-->
+  <footer class="footer">
+    <a class="footerLogo" href="https://linktr.ee/rodrigosteps" target="_blank">
+      <img src="./assets/icon/FOOTER2.svg" alt="logo footer" />
+    </a>
+
+    <div class="social">
+      <div class="links">
+        <a href="https://github.com/rodrigosteps" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+            alt="github" id="logo1" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/rodrigosps/" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="Linkdin"
+            id="logo3" />
+        </a>
+
+        <a href="https://www.behance.net/rodrigosteps" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/behance/behance-plain.svg" alt="beLogo"
+            id="logo3" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 <!--/////////////// Javacript ///////////////-->
