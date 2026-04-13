@@ -159,9 +159,9 @@ document.getElementById("Pergunta").addEventListener("blur", function() {
 //consts para pegar os elementos do DOM que serão manipulados
 function pickUp() {
     const usuarioPergunta = document.getElementById("Pergunta").value;
-    const Play1 = document.querySelector(".deck1");
-    const Play2 = document.querySelector(".deck2");
-    const Play3 = document.querySelector(".deck3");
+    const Play1 = document.querySelector(".cartaflip");
+    const Play2 = document.querySelector(".cartaflip2");
+    const Play3 = document.querySelector(".cartaflip3");
 
     //validação com If/Else
     if (usuarioPergunta.trim() !== "") {

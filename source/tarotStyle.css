@@ -21,12 +21,12 @@ body {
   width: 100%;
   height: 100vmax;
   scroll-behavior: smooth;
-  scrollbar-color: #8e0cff #000000;}
+  scrollbar-color: #8e0cff #000000;
+}
 
 /*estilos do Background*/
 .background {
-  background: #7700ff;
-  background: radial-gradient(circle,rgba(119, 0, 255, 1) 4%, rgba(21, 0, 71, 1) 47%, rgba(0, 0, 0, 1) 73%);
+  background: radial-gradient(circle, rgba(119, 0, 255, 1) 4%, rgba(21, 0, 71, 1) 47%, rgba(0, 0, 0, 1) 73%);
   position: fixed;
   width: 100%;
   height: 200%;
@@ -75,7 +75,7 @@ body {
 /*estilos do cabeçalho*/
 .cabecalho {
   width: 100%;
-  height: 7em;
+  height: 8em;
   display: flex;
   background-color: #380d599c;
   backdrop-filter: blur(1px);
@@ -112,123 +112,19 @@ body {
   margin: 0em auto;
   width: 10em;
   height: 23em;
-    transform: rotate(-15deg);
+  transform: rotate(-15deg);
 
 }
 
 .cartaDemo {
   width: 10em;
-  height:auto;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   perspective: 1000px;
-  animation: cartaGirando 2s
-    linear(
-      0,
-      0.067,
-      0.1294,
-      0.1877,
-      0.2421,
-      0.2929,
-      0.3402,
-      0.3844,
-      0.4257,
-      0.4641,
-      0.5,
-      0.5335,
-      0.5647,
-      0.5939,
-      0.6211,
-      0.6464,
-      0.6701,
-      0.6922,
-      0.7128,
-      0.7321,
-      0.75,
-      0.7667,
-      0.7824,
-      0.7969,
-      0.8105,
-      0.8232,
-      0.8351,
-      0.8461,
-      0.8564,
-      0.866,
-      0.875,
-      0.8834,
-      0.8912,
-      0.8985,
-      0.9053,
-      0.9116,
-      0.9175,
-      0.9231,
-      0.9282,
-      0.933,
-      0.9375,
-      0.9417,
-      0.9456,
-      0.9492,
-      0.9526,
-      0.9558,
-      0.9588,
-      0.9615,
-      0.9641,
-      0.9665,
-      0.9688,
-      0.9708,
-      0.9728,
-      0.9746,
-      0.9763,
-      0.9779,
-      0.9794,
-      0.9808,
-      0.9821,
-      0.9833,
-      0.9844,
-      0.9854,
-      0.9864,
-      0.9873,
-      0.9882,
-      0.989,
-      0.9897,
-      0.9904,
-      0.991,
-      0.9916,
-      0.9922,
-      0.9927,
-      0.9932,
-      0.9937,
-      0.9941,
-      0.9945,
-      0.9948,
-      0.9952,
-      0.9955,
-      0.9958,
-      0.9961,
-      0.9964,
-      0.9966,
-      0.9968,
-      0.997,
-      0.9972,
-      0.9974,
-      0.9976,
-      0.9978,
-      0.9979,
-      0.998,
-      0.9982,
-      0.9983,
-      0.9984,
-      0.9985,
-      0.9986,
-      0.9987,
-      0.9988,
-      0.9989,
-      0.999,
-      1
-    )
-    infinite;
+  animation: cartaGirando 2s cubic-bezier(0.19, 1, 0.22, 1) infinite;
   backface-visibility: hidden;
 }
 
@@ -265,17 +161,18 @@ body {
 }
 
 /*Frase principal*/
-h1,h2 {
+h1,
+h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0.2em auto;
-  color:#ffffff;
+  color: #ffffff;
   font-size: 68px;
   font-family: "Cinzel Decorative";
   text-shadow: 2px 2px 10px #a48f00;
-  }
+}
 
 /*campo da pergunta*/
 .infoInput {
@@ -305,7 +202,7 @@ h1,h2 {
 }
 
 .infoInput input::placeholder {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -348,7 +245,7 @@ h1,h2 {
     margin-bottom: 0em;
   }
 
-  p,span{
+  p {
     background-color: var(--panelcolor);
     border-radius: var(--borderRadius);
     width: 12.5em;
@@ -371,458 +268,124 @@ h1,h2 {
 }
 
 /* cartas embaralhadas*/
-.deck {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
+.deck,
+.deckfront {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: -5.5em;
+  margin-top: 4em;
 }
 
 .deck1,
 .deck2,
-.deck3 {
+.deck3,
+.deckfront {
   position: absolute;
-  left: -5em;
-  
+}
+
+.cartaflip,
+.cartaflip2,
+.cartaflip3 {
+  width: 1em;
+  position: absolute;
+  left: -1em;
 }
 
 .deckback img,
-.deck img {
-  margin-top: 3em;
+.deck img,
+.deckfront img {
   width: 10em;
   height: 15em;
   border-radius: var(--borderRadius);
 }
 
+.deckfront {
+  transform: rotateY(-180deg);
+}
+
 /*Verso do baralho*/
 .deckback {
   position: absolute;
-  bottom: 0.6em;
-  z-index: -1;
-left: -5.5em;
+  left: -1em;
+  margin-top: 4em;
+
 }
 
 /*Animação do deck de cartas*/
 .deck1Active {
   transition: 8s ease-in-out;
-  animation: flip1 1s
-    linear(
-      0,
-      0.067,
-      0.1294,
-      0.1877,
-      0.2421,
-      0.2929,
-      0.3402,
-      0.3844,
-      0.4257,
-      0.4641,
-      0.5,
-      0.5335,
-      0.5647,
-      0.5939,
-      0.6211,
-      0.6464,
-      0.6701,
-      0.6922,
-      0.7128,
-      0.7321,
-      0.75,
-      0.7667,
-      0.7824,
-      0.7969,
-      0.8105,
-      0.8232,
-      0.8351,
-      0.8461,
-      0.8564,
-      0.866,
-      0.875,
-      0.8834,
-      0.8912,
-      0.8985,
-      0.9053,
-      0.9116,
-      0.9175,
-      0.9231,
-      0.9282,
-      0.933,
-      0.9375,
-      0.9417,
-      0.9456,
-      0.9492,
-      0.9526,
-      0.9558,
-      0.9588,
-      0.9615,
-      0.9641,
-      0.9665,
-      0.9688,
-      0.9708,
-      0.9728,
-      0.9746,
-      0.9763,
-      0.9779,
-      0.9794,
-      0.9808,
-      0.9821,
-      0.9833,
-      0.9844,
-      0.9854,
-      0.9864,
-      0.9873,
-      0.9882,
-      0.989,
-      0.9897,
-      0.9904,
-      0.991,
-      0.9916,
-      0.9922,
-      0.9927,
-      0.9932,
-      0.9937,
-      0.9941,
-      0.9945,
-      0.9948,
-      0.9952,
-      0.9955,
-      0.9958,
-      0.9961,
-      0.9964,
-      0.9966,
-      0.9968,
-      0.997,
-      0.9972,
-      0.9974,
-      0.9976,
-      0.9978,
-      0.9979,
-      0.998,
-      0.9982,
-      0.9983,
-      0.9984,
-      0.9985,
-      0.9986,
-      0.9987,
-      0.9988,
-      0.9989,
-      0.999,
-      1
-    )
-    forwards;
+  animation: flip1 1s ease forwards;
   backface-visibility: hidden;
 }
 
 .deck2Active {
   transition: 4s ease-in-out;
-  animation: flip2 1s
-    linear(
-      0,
-      0.067,
-      0.1294,
-      0.1877,
-      0.2421,
-      0.2929,
-      0.3402,
-      0.3844,
-      0.4257,
-      0.4641,
-      0.5,
-      0.5335,
-      0.5647,
-      0.5939,
-      0.6211,
-      0.6464,
-      0.6701,
-      0.6922,
-      0.7128,
-      0.7321,
-      0.75,
-      0.7667,
-      0.7824,
-      0.7969,
-      0.8105,
-      0.8232,
-      0.8351,
-      0.8461,
-      0.8564,
-      0.866,
-      0.875,
-      0.8834,
-      0.8912,
-      0.8985,
-      0.9053,
-      0.9116,
-      0.9175,
-      0.9231,
-      0.9282,
-      0.933,
-      0.9375,
-      0.9417,
-      0.9456,
-      0.9492,
-      0.9526,
-      0.9558,
-      0.9588,
-      0.9615,
-      0.9641,
-      0.9665,
-      0.9688,
-      0.9708,
-      0.9728,
-      0.9746,
-      0.9763,
-      0.9779,
-      0.9794,
-      0.9808,
-      0.9821,
-      0.9833,
-      0.9844,
-      0.9854,
-      0.9864,
-      0.9873,
-      0.9882,
-      0.989,
-      0.9897,
-      0.9904,
-      0.991,
-      0.9916,
-      0.9922,
-      0.9927,
-      0.9932,
-      0.9937,
-      0.9941,
-      0.9945,
-      0.9948,
-      0.9952,
-      0.9955,
-      0.9958,
-      0.9961,
-      0.9964,
-      0.9966,
-      0.9968,
-      0.997,
-      0.9972,
-      0.9974,
-      0.9976,
-      0.9978,
-      0.9979,
-      0.998,
-      0.9982,
-      0.9983,
-      0.9984,
-      0.9985,
-      0.9986,
-      0.9987,
-      0.9988,
-      0.9989,
-      0.999,
-      1
-    )
-    forwards;
+  animation: flip2 1s ease forwards;
   backface-visibility: hidden;
 }
 
 .deck3Active {
   transition: 1s ease-in-out;
-  animation: flip3 1s
-    linear(
-      0,
-      0.067,
-      0.1294,
-      0.1877,
-      0.2421,
-      0.2929,
-      0.3402,
-      0.3844,
-      0.4257,
-      0.4641,
-      0.5,
-      0.5335,
-      0.5647,
-      0.5939,
-      0.6211,
-      0.6464,
-      0.6701,
-      0.6922,
-      0.7128,
-      0.7321,
-      0.75,
-      0.7667,
-      0.7824,
-      0.7969,
-      0.8105,
-      0.8232,
-      0.8351,
-      0.8461,
-      0.8564,
-      0.866,
-      0.875,
-      0.8834,
-      0.8912,
-      0.8985,
-      0.9053,
-      0.9116,
-      0.9175,
-      0.9231,
-      0.9282,
-      0.933,
-      0.9375,
-      0.9417,
-      0.9456,
-      0.9492,
-      0.9526,
-      0.9558,
-      0.9588,
-      0.9615,
-      0.9641,
-      0.9665,
-      0.9688,
-      0.9708,
-      0.9728,
-      0.9746,
-      0.9763,
-      0.9779,
-      0.9794,
-      0.9808,
-      0.9821,
-      0.9833,
-      0.9844,
-      0.9854,
-      0.9864,
-      0.9873,
-      0.9882,
-      0.989,
-      0.9897,
-      0.9904,
-      0.991,
-      0.9916,
-      0.9922,
-      0.9927,
-      0.9932,
-      0.9937,
-      0.9941,
-      0.9945,
-      0.9948,
-      0.9952,
-      0.9955,
-      0.9958,
-      0.9961,
-      0.9964,
-      0.9966,
-      0.9968,
-      0.997,
-      0.9972,
-      0.9974,
-      0.9976,
-      0.9978,
-      0.9979,
-      0.998,
-      0.9982,
-      0.9983,
-      0.9984,
-      0.9985,
-      0.9986,
-      0.9987,
-      0.9988,
-      0.9989,
-      0.999,
-      1
-    )
-    forwards;
+  animation: flip3 1s ease forwards;
   backface-visibility: hidden;
 }
 
 @keyframes flip1 {
   0% {
-    transform: translateX(0) rotateY(0deg);
-  }
-
-  55% {
-    transform: translateX(28.75em);
-  }
-
-  80% {
-    transform: translateX(28.813em) rotateY(60deg);
-  }
-
-  85% {
-    transform: rotateY(90deg);
+    transform: translateX(0em);
   }
 
   90% {
-    transform: rotateY(120deg);
+    transform: translateX(28em)
   }
 
   95% {
-    transform: rotateY(150deg);
+    transform: translateX(28em) rotateY(95deg) scale(1.2);
   }
 
   100% {
-    transform: rotateY(180deg);
+    transform: translateX(28em)rotateY(180deg) scale(1);
   }
 }
 
 @keyframes flip2 {
   0% {
-    transform: translateX(0) rotateY(0deg);
-  }
-
-  55% {
-    transform: translateX(694px) rotateY(30deg);
-  }
-
-  80% {
-    transform: translateX(690px) rotateY(60deg);
-  }
-
-  85% {
-    transform: translateX(690px) rotateY(90deg);
+    transform: translateX(0em);
   }
 
   90% {
-    transform: translateX(690px) rotateY(120deg);
+    transform: translateX(43.5em)
   }
 
   95% {
-    transform: translateX(690px) rotateY(150deg);
+    transform: translateX(43.5em) rotateY(95deg) scale(1.2);
   }
 
   100% {
-    transform: translateX(690px) rotateY(180deg);
+    transform: translateX(43.5em)rotateY(180deg) scale(1);
   }
 }
 
 @keyframes flip3 {
   0% {
-    transform: translateX(0) rotateY(0deg);
-  }
-
-  55% {
-    transform: translateX(945px) rotateY(30deg);
-  }
-
-  80% {
-    transform: translateX(945px) rotateY(60deg);
-  }
-
-  85% {
-    transform: translateX(945px) rotateY(90deg);
+    transform: translateX(0em);
   }
 
   90% {
-    transform: translateX(945px) rotateY(120deg);
+    transform: translateX(59em)
   }
 
   95% {
-    transform: translateX(945px) rotateY(150deg);
+    transform: translateX(59em) rotateY(95deg) scale(1.2);
   }
 
   100% {
-    transform: translateX(945px) rotateY(180deg);
+    transform: translateX(59em)rotateY(180deg) scale(1);
   }
 }
+
 /*Footer style*/
 .footer {
   display: flex;
@@ -843,6 +406,7 @@ left: -5.5em;
   filter: invert(85%);
   transform: rotate(-10deg) scale(1.1);
 }
+
 .footerLogo img {
   width: 180px;
 }
