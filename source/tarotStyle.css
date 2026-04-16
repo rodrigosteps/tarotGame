@@ -26,7 +26,12 @@ body {
 
 /*estilos do Background*/
 .background {
-  background: radial-gradient(circle, rgba(119, 0, 255, 1) 4%, rgba(21, 0, 71, 1) 47%, rgba(0, 0, 0, 1) 73%);
+  background: radial-gradient(
+    circle,
+    rgba(119, 0, 255, 1) 4%,
+    rgba(21, 0, 71, 1) 47%,
+    rgba(0, 0, 0, 1) 73%
+  );
   position: fixed;
   width: 100%;
   height: 200%;
@@ -113,7 +118,6 @@ body {
   width: 10em;
   height: 23em;
   transform: rotate(-15deg);
-
 }
 
 .cartaDemo {
@@ -161,8 +165,7 @@ body {
 }
 
 /*Frase principal*/
-h1,
-h2 {
+h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,6 +173,18 @@ h2 {
   margin: 0.2em auto;
   color: #ffffff;
   font-size: 68px;
+  font-family: "Cinzel Decorative";
+  text-shadow: 2px 2px 10px #a48f00;
+}
+
+h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+  color: #ffffff;
+  font-size: 48px;
   font-family: "Cinzel Decorative";
   text-shadow: 2px 2px 10px #a48f00;
 }
@@ -238,7 +253,7 @@ h2 {
   border: 1px solid #f0c02f;
 
   h3 {
-    font-family: 'cookie';
+    font-family: "cookie";
     font-size: 4rem;
     color: #f0c02f;
     -webkit-text-stroke: 1px #241e038a;
@@ -267,30 +282,24 @@ h2 {
   border-radius: var(--borderRadius);
 }
 
-/* cartas embaralhadas*/
-
 .deck,
-.deckfront {
-  display: flex;
-  flex-direction: row;
+.deckback {
   position: absolute;
-  left: -5.5em;
+  left: 1em;
   margin-top: 4em;
-}
-
-.deck1,
-.deck2,
-.deck3,
-.deckfront {
-  position: absolute;
 }
 
 .cartaflip,
 .cartaflip2,
 .cartaflip3 {
-  width: 1em;
   position: absolute;
-  left: -1em;
+  left: 0em;
+}
+
+.deckfront {
+  position: absolute;
+  left: 1em;
+  margin-top: 4em;
 }
 
 .deckback img,
@@ -299,18 +308,26 @@ h2 {
   width: 10em;
   height: 15em;
   border-radius: var(--borderRadius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.cartaflip2 {
+  transform: translate(2px, -2px);
+  z-index: 2;
+}
+.cartaflip3 {
+  transform: translate(4px, -4px);
+  z-index: 1;
+}
+
+/* O monte principal no topo */
+.deck {
+  z-index: 5;
+}
+
+/* A face da carta começa virada para baixo */
 .deckfront {
   transform: rotateY(-180deg);
-}
-
-/*Verso do baralho*/
-.deckback {
-  position: absolute;
-  left: -1em;
-  margin-top: 4em;
-
 }
 
 /*Animação do deck de cartas*/
@@ -338,15 +355,15 @@ h2 {
   }
 
   90% {
-    transform: translateX(28em)
+    transform: translateX(23em);
   }
 
   95% {
-    transform: translateX(28em) rotateY(95deg) scale(1.2);
+    transform: translateX(23em) scale(1.2);
   }
 
   100% {
-    transform: translateX(28em)rotateY(180deg) scale(1);
+    transform: translateX(23em) scale(1);
   }
 }
 
@@ -356,15 +373,15 @@ h2 {
   }
 
   90% {
-    transform: translateX(43.5em)
+    transform: translateX(38em);
   }
 
   95% {
-    transform: translateX(43.5em) rotateY(95deg) scale(1.2);
+    transform: translateX(38em) scale(1.2);
   }
 
   100% {
-    transform: translateX(43.5em)rotateY(180deg) scale(1);
+    transform: translateX(38em) scale(1);
   }
 }
 
@@ -374,15 +391,15 @@ h2 {
   }
 
   90% {
-    transform: translateX(59em)
+    transform: translateX(54em);
   }
 
   95% {
-    transform: translateX(59em) rotateY(95deg) scale(1.2);
+    transform: translateX(54em) scale(1.2);
   }
 
   100% {
-    transform: translateX(59em)rotateY(180deg) scale(1);
+    transform: translateX(54em) scale(1);
   }
 }
 
