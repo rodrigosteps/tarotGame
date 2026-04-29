@@ -144,20 +144,13 @@ document.getElementById("Pergunta").addEventListener("click", function () {
   
 });
 
-const input = document.querySelector(".infoInput");
-//animação de zoom in no input da pergunta
-input.addEventListener("click", function() {
- input.style.transform = "scale(1.2)";
-}) 
-//animação de zoom out no input da pergunta
-document.getElementById("Pergunta").addEventListener("blur", function() {
-  document.querySelector(".infoInput").style.transition = "0.6s ease";
-  document.querySelector(".infoInput").style.transform = "scale(1.1)";
-}) 
 
 //função para sortear as cartas e mostrar os significados
 //consts para pegar os elementos do DOM que serão manipulados
 function pickUp() {
+
+    const audioPlay = document.getElementById("Somdecarta");
+    
     const usuarioPergunta = document.getElementById("Pergunta").value;
     const Play1 = document.querySelector(".cartaflip");
     const Play2 = document.querySelector(".cartaflip2");
@@ -190,24 +183,25 @@ function pickUp() {
 
         //atraso na animação
         setTimeout(() => {
+
             document.getElementById("CartaPassado").src = cartaPassado.carta;
             document.getElementById("CartaPresente").src = cartaPresente.carta;
             document.getElementById("CartaFuturo").src = cartaFuturo.carta;
         
-            document.getElementById("descriçãoCartaPassado").innerText =
-                cartaPassado.texto;
-            document.getElementById("descriçãoCartaPresente").innerText =
-                cartaPresente.texto;
-            document.getElementById("descriçãoCartaFuturo").innerText =
-                cartaFuturo.texto;
-        }, 870);
+            document.getElementById("descriçãoCartaPassado").innerText = cartaPassado.texto;
+            document.getElementById("descriçãoCartaPresente").innerText = cartaPresente.texto;
+            document.getElementById("descriçãoCartaFuturo").innerText = cartaFuturo.texto;
 
-        //habilitando o botão novamente
-        setTimeout(() => {
+
+            //habilitando o botão novamente
             btn.disabled = false;
             btn.innerText = "Nova Leitura";
             btn.style.opacity = 1;
-        }, 1000);
+
+            audioPlay.play();
+        }, 870);
+
+
 }
     //Else para validação da pergunta
     else {
