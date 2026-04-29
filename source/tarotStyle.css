@@ -16,6 +16,7 @@
   --textH: #edd657;
   --textShadow: 2px 2px 10px #a48f00;
   --trasition: all 0.3s ease;
+  --cinzel: "Cinzel Decorative";
 }
 
 html,
@@ -28,12 +29,10 @@ body {
 
 /*estilos do Background*/
 .background {
-  background: radial-gradient(
-    circle,
-    rgba(119, 0, 255, 1) 4%,
-    rgba(21, 0, 71, 1) 47%,
-    rgba(0, 0, 0, 1) 73%
-  );
+  background: radial-gradient(circle,
+      rgba(119, 0, 255, 1) 4%,
+      rgba(21, 0, 71, 1) 47%,
+      rgba(0, 0, 0, 1) 73%);
   position: fixed;
   width: 100%;
   height: 200%;
@@ -62,7 +61,6 @@ body {
   position: fixed;
   top: -50%;
   left: -50%;
-  zoom: 200%;
   width: 200%;
   height: 200%;
   z-index: -1;
@@ -78,6 +76,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
 
 /*estilos do cabeçalho*/
 .cabecalho {
@@ -167,16 +166,22 @@ body {
 }
 
 /*Frase principal*/
-h1 {
+.frase {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 0.2em auto;
   color: var(--textH);
-  font-size: 68px;
-  font-family: "Cinzel Decorative";
+  font-size: 44px;
+  font-family: var(--cinzel);
   text-shadow: var(--textShadow);
+  gap: 20px;
+}
+
+.frase img {
+  width: 32px;
+  height: auto;
 }
 
 h2 {
@@ -187,73 +192,81 @@ h2 {
   margin: 1em auto;
   color: var(--textH);
   font-size: 48px;
-  font-family: "Cinzel Decorative";
-  text-shadow:var(--) ;
+  font-family: var(--cinzel);
+  text-shadow: var(--);
 }
 
 /*campo da pergunta*/
 .infoInput {
   height: 6em;
-  width: 44em;
+  width: 56em;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
   background: rgba(241, 203, 100, 0.363);
   border-radius: 16px;
+  gap: 10px;
+  font-family: var(--cinzel);
 }
 
 .infoInput:hover {
   border: solid 1px #e6c665bd;
   box-shadow: 0 0 40px 10px #e6c665bd;
   transition: var(--trasition);
+  font-family: var(--cinzel);
+
 }
 
 .infoInput input {
-  width: 44em;
-  height: 3.5em;
+  width: 20em;
+  height: 2em;
   border-radius: var(--borderRadius);
-  border: 1px solid #e1c300;
+  border: none;
   background-color: var(--panelcolor);
-  padding-left: 1em;
+  font-family: var(--cinzel);
+  color: var(--textH);
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
 }
 
 .infoInput input::placeholder {
-  font-size: 20px;
   font-weight: 600;
-  color:var(--textH);
-  font-family: "Cinzel Decorative";
+  color: var(--textH);
+  align-items: center;
+  font-family: var(--cinzel);
 }
 
 .infoInput input:focus {
-    font-family: "Cinzel Decorative";
   outline: none;
   background-color: var(--panelcolor);
-  padding: 0;
-  margin: 0;
+  font-size: 30px;
+  transition: all 0.4s ease;
 }
+
 
 /*Botão da pergunta*/
 .infoInput button {
   background-color: #362c4e;
   color: #e4e1f4;
-  margin-left: -12.3em;
-  width: 12em;
-  height: 2.8em;
-  font-size: 14px;
+  width: 16em;
+  height: 3.8em;
+  font-size: 16px;
   font-weight: bolder;
-    font-family: "Cinzel Decorative";
+  font-family: "Cinzel Decorative";
   border-radius: var(--borderRadius);
-  border: 1px solid #362c4e;
+  border: 2px solid #362c4e;
   cursor: pointer;
 }
 
 .infoInput button:hover {
-  background:linear-gradient(145deg,#210b4a 20%, #7a5fba 40%, #210b4a 80%);
-  border-color: var(--textH);
+  background: linear-gradient(145deg, #210b4a 20%, #7a5fba 40%, #210b4a 80%);
   border: 1px solid var(--textH);
-    transition: var(--trasition);
+  transition: var(--trasition);
+  color: var(--textH);
+  font-weight: 800;
 }
 
 .resultado {
@@ -279,7 +292,7 @@ h2 {
     font-family: "cookie";
     font-size: 4rem;
     color: #e1b800;
-    text-shadow:2px 2px 8px #060500;    
+    text-shadow: 2px 2px 8px #060500;
   }
 
   p {
@@ -338,6 +351,7 @@ h2 {
   transform: translate(2px, -2px);
   z-index: 2;
 }
+
 .cartaflip3 {
   transform: translate(4px, -4px);
   z-index: 1;
