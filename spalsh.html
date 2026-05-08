@@ -1,222 +1,174 @@
 <!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Cookie&family=Mogra&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/icon/ " type="img" />
+    <!--titulo do projeto-->
+    <title>Vortex Tarot</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Cookie&family=Mogra&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" href="./assets/icon/ " type="img" />
-  <!--titulo do projeto-->
-  <title>Vortex Tarot</title>
-</head>
-
-<body>
-
+  <body>
     <style>
-        html,
-        body {
-            width: auto;
-            height: auto;
-            scroll-behavior: smooth;
-            scrollbar-color: #8e0cff #000000;
+      @import url(./source/tarotStyle.css);
+
+      html,
+      body {
+        width: auto;
+        height: auto;
+        scroll-behavior: smooth;
+        scrollbar-color: #8e0cff #000000;
+        margin: 0;
+      }
+
+
+      /*Carta Girando*/
+      .primeiraImagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em auto;
+        width: 10em;
+        height: 23em;
+        animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+      }
+
+      .cartaDemo {
+        width: 40em;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+        animation: cartaGirando 4s linear 1s infinite;
+        backface-visibility: hidden;
+      }
+
+      @keyframes puff-in-center {
+        0% {
+          transform: scale(2);
+          filter: blur(4px);
+          opacity: 0;
         }
 
-        /*estilos do texto inicial*/
-        .container {
-            margin: 2em auto;
-            position: relative;
-            width: 10em;
-            height: 20em;
+        100% {
+          transform: scale(1);
+          filter: blur(0px);
+          opacity: 1;
+          transform: rotate(-15deg);
+        }
+      }
+
+      /* Animação para girar a carta */
+      @keyframes cartaGirando {
+        from {
+          transform: rotateY(0deg);
         }
 
-        /*estilos do Background*/
-        .background {
-            background: radial-gradient(circle,
-                    #150047 20%,
-                    #000000 73%);
-            position: fixed;
-            width: 100%;
-            height: 200%;
-            top: -100%;
-            left: 0%;
-            z-index: -3;
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .cartaDemo img {
+        width: 12em;
+        height: 17em;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 16px;
+        filter: drop-shadow(1px 0px 20px rgb(107, 0, 107));
+      }
+
+      .Frente,
+      .Verso {
+        position: absolute;
+        width: 12em;
+        height: 17em;
+      }
+
+      .Frente {
+        transform: rotateY(180deg);
+      }
+
+      button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5em auto;
+        width: 8em;
+        height: 3em;
+        background-color: #330766;
+        color: #e4e1f4;
+        font-size: 24px;
+        font-weight: bolder;
+        font-family: "Cinzel Decorative";
+        border-radius: 6px;
+        border: 1px solid #330766;
+        cursor: pointer;
+        animation: entry 2s ease-in-out forwards;
+      }
+
+      button:hover {
+        background: #49009c;
+        border: 1px solid #ba8004;
+        font-weight: 800;
+        transition: all 0.3s ease-in-out;
+        text-shadow: 2px 1px rgb(43, 32, 1);
+        transform: scale(1.05);
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      @keyframes entry {
+        0% {
+          transform: translateY(50px);
+          opacity: 0;
         }
 
-        .backgroundCamada {
-            background-image: url(/tarotGame/assets/mesh-gradient.png);
-            opacity: 0.3;
-            position: fixed;
-            filter: brightness(15%);
-            top: 0%;
-            left: 0%;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
+        100% {
+          opacity: 1;
         }
-
-
-        .imgLogo img {
-            border-radius: var(--borderRadius);
-            width: auto;
-            height: 6em;
-        }
-
-        .imgLogo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-        }
-
-        /*Carta Girando*/
-        .primeiraImagem {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0em auto;
-            width: 10em;
-            height: 23em;
-            animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-        }
-
-        .cartaDemo {
-            width: 40em;
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-            animation: cartaGirando 4s linear 1s infinite;
-            backface-visibility: hidden;
-        }
-
-        @keyframes puff-in-center {
-            0% {
-                transform: scale(2);
-                filter: blur(4px);
-                opacity: 0;
-            }
-
-            100% {
-                transform: scale(1);
-                filter: blur(0px);
-                opacity: 1;
-                transform: rotate(-15deg);
-            }
-        }
-
-        /* Animação para girar a carta */
-        @keyframes cartaGirando {
-            from {
-                transform: rotateY(0deg);
-            }
-
-            to {
-                transform: rotateY(360deg);
-            }
-        }
-
-        .cartaDemo img {
-            width: 12em;
-            height: 17em;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            border-radius: 16px;
-            filter: drop-shadow(1px 0px 20px rgb(107, 0, 107));
-        }
-
-        .Frente,
-        .Verso {
-            position: absolute;
-            width: 12em;
-            height: 17em;
-        }
-
-        .Frente {
-            transform: rotateY(180deg);
-        }
-
-        button {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 5em auto;
-            width: 8em;
-            height: 3em;
-            background-color: #330766;
-            color: #e4e1f4;
-            font-size: 24px;
-            font-weight: bolder;
-            font-family: "Cinzel Decorative";
-            border-radius: 6px;
-            border: 1px solid #330766;
-            cursor: pointer;
-            animation: entry 2s ease-in-out forwards;
-        }
-
-        button:hover {
-            background: #49009c;
-            border: 1px solid #ba8004;
-            font-weight: 800;
-            transition: all 0.3s ease-in-out;
-            text-shadow: 2px 1px rgb(43, 32, 1);
-            transform: scale(1.05);
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
-        @keyframes entry {
-            0% {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
+      }
     </style>
 
-    <div class="background" id="bkg"></div>
-    <!--cabeçalho do projeto-->
-    <header class="cabecalho">
-        <div class="imgLogo">
-            <img src="./assets/icon/Captura de tela 2026-04-05 132337.png" alt="logo" srcset="" />
-        </div>
-    </header>
-
-    <!--container do projeto-->
+<!--cabeçalho do projeto-->
+<header class="cabecalho">
+      <div class="blur"></div>
+  <h1>Filum Fati</h1>
+  <p>Seu oraculo digital</p>
+</header>
+<!--container do projeto-->
+<div class="background"></div>
     <main class="container">
+      <!--seção de fundo para animação-->
+      <div class="backgroundCamada"></div>
 
-        <!--seção de fundo para animação-->
-        <div class="backgroundCamada"></div>
+      <!--animação no topo do site-->
+      <section class="primeiraImagem">
+        <div class="cartaDemo">
+          <div class="Frente">
+            <img src="./assets/backcard.png" alt="" />
+          </div>
+          <div class="Verso">
+            <img src="./assets/backcard1.png" alt="" />
+          </div>
+        </div>
+      </section>
 
-        <!--animação no topo do site-->
-        <section class="primeiraImagem">
-            <div class="cartaDemo">
-                <div class="Frente">
-                    <img src="./assets/backcard.png" alt="" />
-                </div>
-                <div class="Verso">
-                    <img src="./assets/backcard1.png" alt="" />
-                </div>
-            </div>
-        </section>
-
-        <!--botão do site-->
-        <a href="index.html"> <button type="submit">Entrar </button></a>
+      <!--botão do site-->
+      <a href="index.html"> <button type="submit">EntraR</button></a>
     </main>
-
-</body>
-
+  </body>
 </html>

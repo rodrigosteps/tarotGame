@@ -81,25 +81,52 @@ body {
 /*estilos do cabeçalho*/
 .cabecalho {
   width: 100%;
-  height: 8em;
+  height: 5em;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   background-color: #380d599c;
   backdrop-filter: blur(1px);
-  border-bottom: solid 4px #e1c300;
+  font-family: var(--cinzel) ;
+  color: var(--fontcolor);
+  text-shadow: var(--textShadow);
+  font-size: 2em;
+  border-bottom: 2px solid #e6c665bd;
 }
 
-.imgLogo img {
-  border-radius: var(--borderRadius);
-  width: auto;
-  height: 6em;
+.cabecalho p{
+  font-size: 0.8em;
 }
 
-.imgLogo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: var(--margin);
+.blur{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5em;
+  background: linear-gradient(to bottom,#700488 40%,#700f85 10%, #c026e3 100%);
+  opacity: 0.6;
+  filter: blur(4px);
+  z-index: -1;
 }
+
+/* O Fio de Ouro */
+.resultado::before {
+  content: '';
+  position: absolute;
+  top: 78%;  /* Centraliza o fio na altura das cartas */
+  left: 10%;
+  right: 0%;
+  height: 2px;
+  background: linear-gradient(95deg, 
+    transparent, 
+    rgba(212, 175, 55, 0.5), 
+    #d4af37, 
+    rgba(212, 175, 55, 0.5), 
+    transparent
+  );
+}
+
 
 /*estilos do texto inicial*/
 .container {
@@ -286,6 +313,9 @@ h2 {
   gap: 20px;
 }
 
+
+
+
 /*espaco das cartas*/
 .carta {
   width: 15em;
@@ -320,19 +350,17 @@ h2 {
   padding: 0 0.5em;
   margin: 0em 0.5em;
   font-size: 1em;
-  font-weight: 900;
-  color: #0a0801;
+  font-weight:600;
   word-break: break-word;
   font-family: "Montserrat";
   text-align: center;
-  text-shadow: var(--textShadow);
+  text-shadow: 2px 2px 2px #000000 ;
   position: relative;
   color: var(--textH);
   top: 1.5em;
   border: 2px ridge rgb(236, 213, 61);
   animation: entry 2s ease-in-out forwards;
   transition: var(--trasition);
-
 }
 
 /*animação para revelar a descrição da carta*/
