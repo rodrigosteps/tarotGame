@@ -10,14 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Cookie&family=Mogra&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="./assets/icon/ " type="img" />
+    <link rel="icon" href="./assets/icon/favicon.svg " type="img" />
     <!--titulo do projeto-->
     <title>Vortex Tarot</title>
   </head>
 
   <body>
     <style>
-      @import url(./source/tarotStyle.css);
+      @import url(./source/css/tarotStyle.css);
 
       html,
       body {
@@ -27,7 +27,6 @@
         scrollbar-color: #8e0cff #000000;
         margin: 0;
       }
-
 
       /*Carta Girando*/
       .primeiraImagem {
@@ -84,7 +83,7 @@
         aspect-ratio: 16/9;
         object-fit: cover;
         border-radius: 16px;
-        filter: drop-shadow(1px 0px 20px rgb(107, 0, 107));
+        filter: drop-shadow(1px 0px 10px rgb(255, 251, 31));
       }
 
       .Frente,
@@ -143,14 +142,14 @@
       }
     </style>
 
-<!--cabeçalho do projeto-->
-<header class="cabecalho">
+    <!--cabeçalho do projeto-->
+    <header class="cabecalho">
       <div class="blur"></div>
-  <h1>Filum Fati</h1>
-  <p>Seu oraculo digital</p>
-</header>
-<!--container do projeto-->
-<div class="background"></div>
+      <h1>Filum Fati</h1>
+      <p>Seu Oráculo Digital</p>
+    </header>
+    <!--container do projeto-->
+    <div class="background"></div>
     <main class="container">
       <!--seção de fundo para animação-->
       <div class="backgroundCamada"></div>
@@ -159,10 +158,10 @@
       <section class="primeiraImagem">
         <div class="cartaDemo">
           <div class="Frente">
-            <img src="./assets/backcard.png" alt="" />
+            <img src="./assets/cartas/backcard.png" alt="" />
           </div>
           <div class="Verso">
-            <img src="./assets/backcard1.png" alt="" />
+            <img src="./assets/cartas/backcard.png" alt="" />
           </div>
         </div>
       </section>

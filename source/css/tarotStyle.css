@@ -43,7 +43,7 @@ body {
 
 
 .backgroundCamada {
-  background-image: url(/tarotGame/assets/mesh-gradient.png);
+  background-image: url(/tarotGame/assets/efeitos/granulado.png);
   opacity: 0.3;
   position: fixed;
   filter: contrast(80%) brightness(10%);
@@ -55,7 +55,7 @@ body {
 }
 
 .backgroundCamada1 {
-  background-image: url(/tarotGame/assets/bkgStar.svg);
+  background-image: url(/tarotGame/assets/efeitos/estrelasGrandes.svg);
   background-repeat: repeat;
   opacity: 0.7;
   filter: blur(3px);
@@ -81,7 +81,7 @@ body {
 /*estilos do cabeçalho*/
 .cabecalho {
   width: 100%;
-  height: 5em;
+  height: 4em;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -92,41 +92,17 @@ body {
   text-shadow: var(--textShadow);
   font-size: 2em;
   border-bottom: 2px solid #e6c665bd;
+  background-image: url(/tarotGame/assets/efeitos/fioDeOuro.svg);
+  background-size: 30em 4em;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 .cabecalho p{
   font-size: 0.8em;
 }
-
-.blur{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5em;
-  background: linear-gradient(to bottom,#700488 40%,#700f85 10%, #c026e3 100%);
-  opacity: 0.6;
-  filter: blur(4px);
-  z-index: -1;
-}
-
-/* O Fio de Ouro */
-.resultado::before {
-  content: '';
-  position: absolute;
-  top: 78%;  /* Centraliza o fio na altura das cartas */
-  left: 10%;
-  right: 0%;
-  height: 2px;
-  background: linear-gradient(95deg, 
-    transparent, 
-    rgba(212, 175, 55, 0.5), 
-    #d4af37, 
-    rgba(212, 175, 55, 0.5), 
-    transparent
-  );
-}
-
 
 /*estilos do texto inicial*/
 .container {
@@ -135,65 +111,6 @@ body {
   width: 1200px;
   height: auto;
 }
-
-
-/* ***DESABILITADO**
-
-Carta Girando
-.primeiraImagem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0em auto;
-  width: 10em;
-  height: 23em;
-  transform: rotate(-15deg);
-  
-}
-
-.cartaDemo {
-  width: 10em;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
-  animation: cartaGirando 2s cubic-bezier(0.19, 1, 0.22, 1) infinite;
-  backface-visibility: hidden;
-}
-
-.cartaDemo img {
-  border-radius: var(--borderRadius);
-  width: 10em;
-  height: 15em;
-}
-
-.Frente,
-.Verso {
-  position: absolute;
-  width: 10em;
-  height: 15em;
-}
-
-.Frente {
-  transform: rotateY(180deg);
-}
-
- Animação para girar a carta 
-@keyframes cartaGirando {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  50% {
-    transform: rotateY(180deg);
-  }
-
-  100% {
-    transform: rotateY(360deg);
-  }
-} */
 
 /*Frase principal*/
 .frase {
