@@ -133,8 +133,31 @@ const baralho = [
   },
 ];
 
+
+function Splash() {
+  const containerSplash = document.getElementById("cSplahs");
+  const container = document.getElementById("Conta");
+  const button = document.getElementById('splashButton')
+  const footer = document.getElementById('ftr')
+  
+  // Verificamos se os elementos existem antes de adicionar o evento para evitar erros.
+  if (containerSplash && container) {
+    
+      containerSplash.style.display = "none"; 
+      container.style.display = "flex";
+      button.style.display = "none"
+      footer.style.display = "none"
+    
+  } else {
+    console.error("Erro: Um ou mais elementos do Splash não foram encontrados no HTML.");
+  }
+}
+
+// Executa a função para que ela fique ativa 
+const splashBtn = document.getElementById("splashButton");
+splashBtn.addEventListener('click',Splash)
+
 //função para sortear as cartas e mostrar os significados
-//consts para pegar os elementos do DOM que serão manipulados
 function pickUp() {
   const audioPlay = document.getElementById("Somdecarta");
 
