@@ -14,7 +14,7 @@
   --fontcolor: #fff4db;
   --panelcolor: #fdc8ff8c;
   --textH: white;
-  --textShadow: 2px 2px 10px #a48f00;
+  --textShadow: 2px 2px 10px #f4c700;
   --trasition: all 0.3s ease;
   --cinzel: "Cinzel Decorative";
 }
@@ -95,15 +95,20 @@ body {
   object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-}
+  }
 
 .cabecalho h1{
   text-shadow: var(--textShadow);
   font-size: 3em;
+
 }
 .cabecalho p{
   font-size: 1em;
+  text-shadow: var(--textShadow);
+
+}
+.cabecalho span{
+  font-size: 1.3em;
   text-shadow: var(--textShadow);
 
 }
@@ -262,10 +267,10 @@ h2 {
 /*campo da pergunta*/
 .infoInput {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 60em;
+  width: 46em;
   height: auto;
   margin: var(--margin);
   padding: 1em;
@@ -312,11 +317,12 @@ h2 {
 }
 
 /*Botão da pergunta*/
-.infoInput button {
+.btn {
   background-color: #362c4e;
   color: #e4e1f4;
   width: 16em;
   height: 3.8em;
+  margin: 0 auto;
   font-size: 16px;
   font-weight: bolder;
   font-family: "Cinzel Decorative";
@@ -326,7 +332,7 @@ h2 {
   cursor: pointer;
 }
 
-.infoInput button:hover {
+.btn:hover {
   background: linear-gradient(145deg, #4609b7 15%, #9875e9 60%);
   color: var(--textH);
               border: 1px solid #ba8004;

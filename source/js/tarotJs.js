@@ -193,7 +193,7 @@ function pickUp() {
       const cartaFuturo = baralhoEmbaralhado[2];
 
       //disabilitando o botão durante a animação
-      const btn = document.querySelector("button");
+      const btn = document.getElementById("btn");
       btn.disabled = true;
       btn.innerText = "Consultando Oráculo...";
       btn.style.opacity = 0.6;
