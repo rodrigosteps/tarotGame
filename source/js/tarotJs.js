@@ -133,7 +133,18 @@ const baralho = [
   },
 ];
 
+// Função de Preload
+const precarregarImagens = () => {
+    baralho.forEach((nome) => {
+        const img = new Image();
+        img.src = `/tarotGame/assets/cartas/${nome}`;
+    });
+};
 
+// Executa o preload quando a janela carregar
+window.onload = precarregarImagens; 
+
+//tela de entrada
 function Splash() {
   const containerSplash = document.getElementById("cSplahs");
   const container = document.getElementById("Conta");
