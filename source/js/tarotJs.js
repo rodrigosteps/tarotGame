@@ -147,17 +147,22 @@ window.onload = precarregarImagens;
 //tela de entrada
 function Splash() {
   const containerSplash = document.getElementById("cSplahs");
-  const container = document.getElementById("Conta");
+  const container = document.getElementById("mainContainer");
   const button = document.getElementById('splashButton')
+  const cabecalho = document.getElementById('cabecalho')
   const footer = document.getElementById('ftr')
+  const svg = document.getElementById('svg')
   
   // Verificamos se os elementos existem antes de adicionar o evento para evitar erros.
   if (containerSplash && container) {
     
       containerSplash.style.display = "none"; 
+      cabecalho.style.display = 'flex'
       container.style.display = "flex";
       button.style.display = "none"
       footer.style.display = "none"
+      svg.style.display = "none"
+      
     
   } else {
     console.error("Erro: Um ou mais elementos do Splash não foram encontrados no HTML.");
