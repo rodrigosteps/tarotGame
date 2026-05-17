@@ -244,7 +244,7 @@ function pickUp() {
   //Else para validação da pergunta
   else {
     document.getElementById("Pergunta").placeholder = "Faça Sua Pergunta!!";
-  }
+    document.getElementById("Pergunta").classList.add("inputError");}
 }
 
 //trigger do botão

@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 
-/*variaveis*/
+/*variaveis*/ 
 :root {
   --fontsize: 70px;
   --borderRadius: 6px;
@@ -339,6 +339,30 @@ h2 {
   color: var(--textH);
   align-items: center;
   font-family: var(--cinzel);
+}
+
+.inputError{
+  animation: shake 0.5s;
+  color: #ff0000;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+  
 }
 
 .infoInput input:focus {
